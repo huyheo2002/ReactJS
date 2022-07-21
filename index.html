@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactJS</title>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- thêm thư viện reactjs -->
+    <!-- bản 18 mới nhât -->
+    <!-- <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script> -->
+    <!-- bản 17 -->
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+    <!-- thư viện react dom bản 17 -->
+    <!-- react dom ko sd được khi chưa có thư viện react => phải tải thư viện react trước mới sd đc react dom -->
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
+    <script>
+        // PHẦN 1 tạo phần tử react / react-dom
+        if(true){
+            // DOM
+            // BT LV1
+            // const h1Dom = document.createElement("h1");
+            // h1Dom.innerText = "Hello Guys";
+            // h1Dom.className = "Heading";
+            // Object.assign(h1Dom.style,{
+            //     color: "red",
+            //     backgroundColor: "#ccc",
+            //     fontSize: "20px"
+            // })
+            // document.body.appendChild(h1Dom);
+            // // BT LV2
+            // const ulDom = document.createElement("ul");
+            // const liDom1 = document.createElement("li");
+            // liDom1.innerText = "JavaScript";
+            // const liDom2 = document.createElement("li");
+            // liDom2.innerText = "PHP";
+
+            // ulDom.appendChild(liDom1);
+            // ulDom.appendChild(liDom2);
+            // document.body.appendChild(ulDom);
+            // // BTLV3
+            // const divDom = document.createElement("div");
+            // divDom.className = "post-item";
+            // const h2Dom = document.createElement("h2");
+            // h2Dom.title = "Học lập trình tại f8";
+            // h2Dom.innerText = "Học React";
+            // const pDom = document.createElement("p");
+            // pDom.innerText = "Học React từ cơ bản đến nâng cao";
+
+            // divDom.appendChild(h2Dom);
+            // divDom.appendChild(pDom);
+
+            // document.body.appendChild(divDom);
+            
+            // React
+            // BT LV1 
+            // React.createElement(type, props, children, childrend n . . .)
+            // children : phần tử con bên trong
+            // children cũng là props
+            const root = document.getElementById("root");
+            const h1React = React.createElement("h1",{
+                className: "heading",
+                title: "hello",
+                color: "blue"
+            }, "Hello Guys");
+
+            // console.dir(h1Dom)
+            // console.log(h1React)
+            // ReactDOM.render(h1React, root);
+            // BT LV2
+            const ulReact = React.createElement(
+                "ul",
+                {}, // hoặc để null cũng đc
+                // một thẻ li mới
+                React.createElement("li", null, "JavaScript"),
+                React.createElement("li", null, "PHP")
+            )
+
+            // ReactDOM.render(ulReact, root);
+
+            // BT LV3
+            const divReact = React.createElement(
+                "div",
+                {className: "post-item"},
+                React.createElement("h2", {title: "học lập trình tại f8"}, "học React"),
+                React.createElement("p", null, "Học React từ cơ bản đến nâng cao")
+            )
+
+            // react-dom là cầu nối giữa react và dom
+            // react và react- dom phải cùng phiên bản
+            // get rootElement            
+            // chỉ render đc 1 phần tử trong 1 thẻ
+            ReactDOM.render(divReact, root);
+        }
+        
+    </script>
+</body>
+</html>
